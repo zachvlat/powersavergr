@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "powersavergr",
+    "name": "Powersaver",
     "slug": "PowerSaverGR",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/icon512.png",
       "resizeMode": "contain",

@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "PowerSaverGR",
+    "name": "powersavergr",
     "slug": "PowerSaverGR",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon512.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,18 +19,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "assets/android/res/mipmap-hdpi/ic_launcher_foreground.png",
+        "monochromeImage": "assets/android/res/mipmap-hdpi/ic_launcher_monochrome.png",
+        "backgroundImage": "assets/android/res/mipmap-hdpi/ic_launcher_background.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.zatsando.PowerSaverGR"
+      "package": "com.zachvlat.powersavergr"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "extra": {
       "eas": {
         "projectId": "cf69c098-3648-4186-b595-557acadc370f"
-      }
+      },
+      "owner": "zachvlat"
     }
   }
 }

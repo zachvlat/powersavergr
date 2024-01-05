@@ -7,11 +7,10 @@ const ListView = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://gist.githubusercontent.com/zachvlat/d448960a145c30485a46f3a579bcc0f6/raw/c45fe99d62c5bebf9d93250bee2d07216f162270/output.json')
+    fetch('https://gist.githubusercontent.com/zachvlat/d448960a145c30485a46f3a579bcc0f6/raw/1f987add90c426c59c1667cc5446d1912cc6910b/output.json')
       .then((response) => response.json())
       .then((json) => {
         console.log('Fetched Data:', json);
-        // Filter objects where Program is not null and has a value
         const programItems = json.filter((item) => item.Program != null && item.Program.trim() !== '');
         setData(programItems);
         setLoading(false);

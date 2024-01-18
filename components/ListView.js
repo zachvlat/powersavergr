@@ -7,11 +7,11 @@ const ListView = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://gist.githubusercontent.com/zachvlat/d448960a145c30485a46f3a579bcc0f6/raw/1f987add90c426c59c1667cc5446d1912cc6910b/output.json')
+    fetch('https://gist.githubusercontent.com/zachvlat/d448960a145c30485a46f3a579bcc0f6/raw/6d2dbc1d79c458dba68e46efbee9e3d237a9f0f2/output.json')
       .then((response) => response.json())
       .then((json) => {
         console.log('Fetched Data:', json);
-        const programItems = json.filter((item) => item.Program != null && item.Program.trim() !== '');
+        const programItems = json.filter((item) => item['Πρόγραμμα'] != null && item['Πρόγραμμα'].trim() !== '');
         setData(programItems);
         setLoading(false);
       })
@@ -38,8 +38,8 @@ const ListView = () => {
           data.map((item, index) => (
             <List.Item
               key={index}
-              title={`Πρόγραμμα: ${item.Program}`}
-              description={`Τιμή: ${item.Price}€/kWh`}
+              title={`Εταιρεία: ${item["Εταιρεία"]}`}
+              description={`Πρόγραμμα: ${item["Πρόγραμμα"]} - Τιμή: ${item["Τελική Τιμή Ημέρας (€/kWh)"]}€/kWh`}
               left={(props) => <List.Icon {...props} icon="folder" />}
               style={styles.listItem}
               titleStyle={styles.titleText}

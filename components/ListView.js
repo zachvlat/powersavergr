@@ -7,7 +7,7 @@ const ListView = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://gist.githubusercontent.com/zachvlat/d448960a145c30485a46f3a579bcc0f6/raw/6d2dbc1d79c458dba68e46efbee9e3d237a9f0f2/output.json')
+    fetch('https://raw.githubusercontent.com/zachvlat/powersavergr/master/components/extracted_data.json')
       .then((response) => response.json())
       .then((json) => {
         console.log('Fetched Data:', json);
@@ -19,7 +19,7 @@ const ListView = () => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
 
   if (loading) {
     return (

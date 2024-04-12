@@ -4,8 +4,8 @@ This app is built with React Native and is released under the GNU General Public
 
 [![Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.zachvlat.powersavergr)
 
-![Image 1](https://play-lh.googleusercontent.com/ymj45zL6RwU0LxAlJCPg7izJsmPSBFMYX-avya93JjtyEdIzIMKQFCIgKkBefhyscqU=w526-h296)
-![Image 2](https://play-lh.googleusercontent.com/WjJ4wPEZITsYikz6fUmPVvrw3HYdhNF9vpPDkp8_OgTCpiBTY5yHRfL21p3F0pj1Ifs=w526-h296)
+![Image 1]((https://play-lh.googleusercontent.com/YA4pynlbJ5ZR98up-h_7vV8JauwbXzrpr-0declH7hP27BLuGJCsQsyeEb2zXy2jhT2R=w526-h296-rw))
+![Image 2]((https://play-lh.googleusercontent.com/7eEvijmOJ_vWZlthjeAmu9Tdpszyel3aPgOeErnILmLl9UfQZ2atsFbvoYCpEvzUcwpj=w526-h296-rw))
 
 
 ## Getting Started

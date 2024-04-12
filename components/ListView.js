@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, StyleSheet, Image } from 'react-native';
 import { List, PaperProvider, DefaultTheme } from 'react-native-paper';
 
 const ListView = () => {
@@ -38,9 +38,14 @@ const ListView = () => {
           data.map((item, index) => (
             <List.Item
               key={index}
-              title={`Εταιρεία: ${item["Εταιρεία"]}`}
-              description={`Πρόγραμμα: ${item["Πρόγραμμα"]} - Τιμή: ${item["Τελική Τιμή Ημέρας (€/kWh)"]}€/kWh`}
-              left={(props) => <List.Icon {...props} icon="folder" />}
+              title={`Τιμή: ${item["Τελική Τιμή Ημέρας (€/kWh)"]}€/kWh`}
+              description={`Πρόγραμμα: ${item["Πρόγραμμα"]}`}
+              left={() => (
+                <Image
+                  source={{ uri: item["Εταιρεία"] }}
+                  style={{ width: 50, height: 50, borderRadius: 25 }}
+                />
+              )}
               style={styles.listItem}
               titleStyle={styles.titleText}
               descriptionStyle={styles.descriptionText}

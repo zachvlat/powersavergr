@@ -2,6 +2,12 @@
 
 This app is built with React Native and is released under the GNU General Public License version 3.0 (GPL-3.0).
 
+[![Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.zachvlat.powersavergr)
+
+![Image 1](https://play-lh.googleusercontent.com/ymj45zL6RwU0LxAlJCPg7izJsmPSBFMYX-avya93JjtyEdIzIMKQFCIgKkBefhyscqU=w526-h296)
+![Image 2](https://play-lh.googleusercontent.com/WjJ4wPEZITsYikz6fUmPVvrw3HYdhNF9vpPDkp8_OgTCpiBTY5yHRfL21p3F0pj1Ifs=w526-h296)
+
+
 ## Getting Started
 
 Follow these steps to get the app up and running on your local machine.
@@ -9,91 +15,27 @@ Follow these steps to get the app up and running on your local machine.
 ### Prerequisites
 
 - Node.js: [Download and install Node.js](https://nodejs.org/)
-- Watchman: [Install Watchman](https://facebook.github.io/watchman/)
 - React Native CLI: [Setup React Native environment](https://reactnative.dev/docs/environment-setup)
-- Xcode: [Install Xcode from the App Store](https://developer.apple.com/xcode/)
+
 
 ### Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/my-awesome-react-native-app.git
-cd my-awesome-react-native-app
+git clone https://github.com/zachvlat/powersavergr.git
+cd powersavergr
+```
 
-
-# Building a React Native App on Mac with Xcode
-
-This guide will walk you through the process of building a React Native app on a Mac using Xcode. 
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/)
-- [Watchman](https://facebook.github.io/watchman/)
-- [React Native CLI](https://reactnative.dev/docs/environment-setup)
-- [Xcode](https://developer.apple.com/xcode/)
-
-## Step 1: Install Node.js
-
-Download and install Node.js from [nodejs.org](https://nodejs.org/).
+2. Install dependencies:
 
 ```bash
-brew install node
+npm install
+```
 
-## Step 2: Install Watchman
+3. Start the local environment:
 
-Watchman is a tool by Facebook for watching changes in the filesystem. Install it using Homebrew:
+```bash
+npx expo start
+```
 
-bash
-
-brew install watchman
-
-## Step 3: Install React Native CLI
-
-Use npm to install the React Native CLI globally:
-
-bash
-
-npm install -g react-native-cli
-
-## Step 4: Create a New React Native Project
-
-Create a new React Native project using the following command:
-
-bash
-
-npx react-native init MyAwesomeApp
-
-Step 5: Navigate to the Project Directory
-
-bash
-
-cd MyAwesomeApp
-
-## Step 6: Start the Metro Bundler
-
-Start the Metro Bundler to bundle your JavaScript code:
-
-bash
-
-npx react-native start
-
-## Step 7: Open the Project in Xcode
-
-Open the iOS project in Xcode:
-
-bash
-
-open ios/MyAwesomeApp.xcworkspace
-
-## Step 8: Configure Xcode
-
-Configure Xcode settings if needed. Make sure to select a simulator and build the app.
-
-## Step 9: Run the App
-
-Run the app using the "Run" button in Xcode.
-
-Congratulations! You have successfully built a React Native app on a Mac with Xcode.
-
-This guide assumes that the user has Homebrew installed. If they don't have it, they can install it by following the instructions on the [Homebrew website](https://brew.sh/). Feel free to modify the guide based on your specific requirements and include any additional steps or information that may be relevant to your project.

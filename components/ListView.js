@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, ActivityIndicator, StyleSheet, Image } from 'react-native';
-import { List, PaperProvider, DefaultTheme } from 'react-native-paper';
+import { List, PaperProvider, DefaultTheme, Button } from 'react-native-paper';
 
 const ListView = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchData = () => {
+    setLoading(true);
+    setError(null);
     fetch('https://raw.githubusercontent.com/zachvlat/powersavergr/master/components/extracted_data.json')
       .then((response) => response.json())
       .then((json) => {
@@ -17,8 +20,13 @@ const ListView = () => {
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        setError(error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   if (loading) {
@@ -29,28 +37,55 @@ const ListView = () => {
     );
   }
 
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>Error fetching data. Please try again later.</Text>
+        <Button mode="contained" onPress={fetchData}>
+          Retry
+        </Button>
+      </View>
+    );
+  }
+
   console.log('Filtered Data Length:', data.length);
 
   return (
     <PaperProvider theme={theme}>
       <ScrollView style={styles.scrollView}>
         {data.length > 0 ? (
-          data.map((item, index) => (
-            <List.Item
-              key={index}
-              title={`Τιμή: ${item["Τελική Τιμή Ημέρας (€/kWh)"]}€/kWh`}
-              description={`Πρόγραμμα: ${item["Πρόγραμμα"]}`}
-              left={() => (
-                <Image
-                  source={{ uri: item["Εταιρεία"] }}
-                  style={{ width: 50, height: 50, borderRadius: 25 }}
-                />
-              )}
-              style={styles.listItem}
-              titleStyle={styles.titleText}
-              descriptionStyle={styles.descriptionText}
-            />
-          ))
+          data.map((item, index) => {
+            const hasYellow = item["Τιμολόγιο"] && item["Τιμολόγιο"].includes("Κίτρινο");
+            const hasGreen = item["Τιμολόγιο"] && item["Τιμολόγιο"].includes("Πράσινο");
+            const hasBlue = item["Τιμολόγιο"] && item["Τιμολόγιο"].includes("Μπλε");
+
+            let borderColor = '#E3F2FD';
+            if (hasYellow) {
+              borderColor = 'yellow';
+            } else if (hasGreen) {
+              borderColor = 'green';
+            } else if (hasBlue) {
+              borderColor = 'blue';
+            }
+
+            return (
+              <List.Item
+                key={index}
+                title={`Τιμή: ${item["Τελική Τιμή Ημέρας (€/kWh)"]}€/kWh`}
+                description={`Πρόγραμμα: ${item["Πρόγραμμα"]}`}
+                left={() => (
+                  <Image
+                    source={{ uri: item["Εταιρεία"] }}
+                    style={styles.companyLogo}
+                    accessibilityLabel={`Company logo of ${item["Πρόγραμμα"]}`}
+                  />
+                )}
+                style={[styles.listItem, { borderColor: borderColor }]}
+                titleStyle={styles.titleText}
+                descriptionStyle={styles.descriptionText}
+              />
+            );
+          })
         ) : (
           <View style={styles.noItemsContainer}>
             <Text>No items found</Text>
@@ -77,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E3F2FD',
     margin: 10,
     borderRadius: 8,
+    borderWidth: 4,
   },
   titleText: {
     color: '#000000',
@@ -96,6 +132,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin: 20,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 10,
+  },
+  companyLogo: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
   },
 });
 

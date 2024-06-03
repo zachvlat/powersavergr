@@ -2,7 +2,7 @@
   "expo": {
     "name": "Powersaver",
     "slug": "PowerSaverGR",
-    "version": "3.0.0",
+    "version": "3.5.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -18,7 +18,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 3,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "assets/android/res/mipmap-hdpi/ic_launcher_foreground.png",
         "monochromeImage": "assets/android/res/mipmap-hdpi/ic_launcher_monochrome.png",

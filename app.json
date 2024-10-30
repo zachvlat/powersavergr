@@ -34,8 +34,17 @@
     "extra": {
       "eas": {
         "projectId": "cf69c098-3648-4186-b595-557acadc370f"
-      },
-      "owner": "zachvlat"
-    }
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "targetSdkVersion": 34
+          }
+        }
+      ]
+    ]
   }
 }

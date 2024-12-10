@@ -10,7 +10,7 @@ const ListView = () => {
   const fetchData = () => {
     setLoading(true);
     setError(null);
-    fetch('https://raw.githubusercontent.com/zachvlat/powersavergr/master/components/extracted_data.json')
+    fetch('https://zachinvalidation.netlify.app/components/extracted_data.json')
       .then((response) => response.json())
       .then((json) => {
         console.log('Fetched Data:', json);

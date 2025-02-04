@@ -2,7 +2,7 @@
   "expo": {
     "name": "Powersaver",
     "slug": "PowerSaverGR",
-    "version": "3.6.0",
+    "version": "3.6.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",

@@ -19,7 +19,7 @@
       "bundleIdentifier": "com.zachvlat.powersavergr"
     },
     "android": {
-      "versionCode": 9,
+      "versionCode": 10,
       "adaptiveIcon": {
         "foregroundImage": "assets/android/res/mipmap-hdpi/ic_launcher_foreground.png",
         "monochromeImage": "assets/android/res/mipmap-hdpi/ic_launcher_monochrome.png",

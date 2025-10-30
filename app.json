@@ -2,7 +2,7 @@
   "expo": {
     "name": "Powersaver",
     "slug": "PowerSaverGR",
-    "version": "3.6.2",
+    "version": "3.7.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -19,7 +19,7 @@
       "bundleIdentifier": "com.zachvlat.powersavergr"
     },
     "android": {
-      "versionCode": 8,
+      "versionCode": 9,
       "adaptiveIcon": {
         "foregroundImage": "assets/android/res/mipmap-hdpi/ic_launcher_foreground.png",
         "monochromeImage": "assets/android/res/mipmap-hdpi/ic_launcher_monochrome.png",

@@ -4,9 +4,7 @@ import { Appbar } from 'react-native-paper';
 const PaperAppbar = () => (
   <Appbar.Header>
     <Appbar.BackAction onPress={() => {}} />
-    <Appbar.Content title="Power Saver GR" />
-    {/* <Appbar.Action icon="calendar" onPress={() => {}} />
-    <Appbar.Action icon="magnify" onPress={() => {}} /> */}
+    <Appbar.Content title="Τιμές Ρεύματος" />
   </Appbar.Header>
 );
 

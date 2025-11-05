@@ -8,7 +8,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <StatusBar style="inverted" />
+        <StatusBar style="dark" />
         <AppBar />
         <ListView />
       </View>
